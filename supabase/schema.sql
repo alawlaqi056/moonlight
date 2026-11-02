@@ -189,6 +189,10 @@ on conflict (id) do update
       file_size_limit = excluded.file_size_limit,
       allowed_mime_types = excluded.allowed_mime_types;
 
+-- القراءة للمدير مطلوبة كي ينجح حذف الصور القديمة (الحذف يقرأ الصف أولًا)
+drop policy if exists "partner images admin select" on storage.objects;
+create policy "partner images admin select" on storage.objects for select to authenticated
+  using (bucket_id = 'partner-images' and public.is_admin());
 drop policy if exists "partner images admin insert" on storage.objects;
 create policy "partner images admin insert" on storage.objects for insert to authenticated
   with check (bucket_id = 'partner-images' and public.is_admin());

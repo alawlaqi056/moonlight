@@ -7,6 +7,6 @@
 // لا تضع أبدًا مفتاح "secret" أو "service_role".
 // ============================================================
 window.ML_CONFIG = {
-  supabaseUrl: "",   // مثال: https://abcdxyz.supabase.co
-  supabaseKey: ""    // مثال: sb_publishable_... أو eyJ...
+  supabaseUrl: "https://vramlmeypztclqicxazc.supabase.co",   // مثال: https://abcdxyz.supabase.co
+  supabaseKey: "sb_publishable_9kJnqgdvWziSwEdYLEQbig_64AqQQBU"    // مثال: sb_publishable_... أو eyJ...
 };
